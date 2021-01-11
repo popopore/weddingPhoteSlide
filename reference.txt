@@ -1,0 +1,6 @@
+
+Cloudinaryの始め方。便利な画像・動画配信サービスを使えるようになるまで
+https://kanaxx.hatenablog.jp/entry/cloudinary/first-step
+
+cloudinaryドキュメント
+https://cloudinary.com/documentation/admin_api
