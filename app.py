@@ -9,7 +9,6 @@ import cloudinary.api
 from cloudinary.utils import cloudinary_url
 from flask import Flask
 
-
 app = Flask(__name__)
 
 basedir = os.path.abspath(os.path.dirname(__name__))
