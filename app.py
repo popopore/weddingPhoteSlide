@@ -1,6 +1,12 @@
 # app.py
 
 import os
+from flask import Flask ,render_template,redirect,url_for
+import cloudinary
+import cloudinary.uploader
+from cloudinary.uploader import upload
+import cloudinary.api
+from cloudinary.utils import cloudinary_url
 from flask import Flask
 
 
@@ -14,6 +20,37 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 
 
+cloudinary.config(
+    cloud_name = "yu1991ta",
+    api_key = "648747536824239",
+    api_secret = "F_PpehZ1SXIZKIYTZMynMHTENzw"
+)
+
+class PhoteInfo:
+    def __init__ (self,name,url):
+        self.name = name
+        self.url = url
+
+#初期画面
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+#スライドショー
+@app.route('/phote_slide')
+def phote_slide():
+
+    #TODO:DBから画像URLを取得できるように修正
+
+    #Cloudinaryから画像一覧を取得
+    img_list = cloudinary.api.resources(type="upload",prefix = "01.WeddingPhoteSlide")
+    
+    #スライドショー画面遷移　パラメータ：画像一覧
+    return render_template('phote_slide.html',img_list=img_list["resources"])
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
