@@ -36,12 +36,12 @@ class PhoteInfo:
         self.url = url
 
 #初期画面
-@app.route('/')
+@app.route("/")
 def index():
     return render_template('index.html')
 
 #スライドショー
-@app.route('/phote_slide')
+@app.route("/phote_slide")
 def phote_slide():
 
     #TODO:DBから画像URLを取得できるように修正
