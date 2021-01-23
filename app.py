@@ -47,7 +47,7 @@ def phote_slide():
     #TODO:DBから画像URLを取得できるように修正
 
     #Cloudinaryから画像一覧を取得
-    img_list = cloudinary.api.resources(type="upload",max_results=20,direction = -1)
+    img_list = cloudinary.api.resources(type="upload",max_results=15,direction = -1)
 
     for image in img_list["resources"]:
         print(image)

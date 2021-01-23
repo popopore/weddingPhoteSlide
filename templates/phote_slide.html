@@ -46,6 +46,19 @@
     document.getElementById("ex3").src = "example2.gif";
   });
  */
+
+ function doReload() {
+ 
+  // reloadメソッドによりページをリロード
+  window.location.reload();
+}
+
+window.addEventListener('load', function () {
+
+  // ページ表示完了した60秒後にリロード
+  setTimeout(doReload, 60000);
+});
+
     $(document).on('ready', function() {
 
       $(".variable").slick({
@@ -55,7 +68,7 @@
           centerPadding:'200px', /*slidesToShowが奇数の場合のみ　前後の画像のちら見せ幅*/
           slidesToScroll: 1,
           autoplay: true, 
-          autoplaySpeed: 2000,
+          autoplaySpeed: 3000, /*画像切り替えスピード
           arrows:false, /*次画像への矢印出すかどうか*/
       });
 
